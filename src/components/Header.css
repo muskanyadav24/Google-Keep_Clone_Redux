@@ -1,0 +1,147 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  height: 64px;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all var(--transition-speed) ease;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-img {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.logo-text {
+  font-family: var(--font-logo);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+.header-center {
+  flex: 0 1 720px;
+  margin: 0 24px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--sidebar-hover-bg);
+  border-radius: var(--radius-lg);
+  height: 48px;
+  padding: 0 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.search-container:focus-within {
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.search-btn {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.search-container:focus-within .search-btn {
+  opacity: 1;
+  color: var(--accent-color);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: background-color 0.2s;
+}
+
+.icon-button:hover {
+  background-color: var(--sidebar-hover-bg);
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .header-center {
+    display: none;
+  }
+  
+  .action-icons .icon-button:not(:last-child) {
+    display: none;
+  }
+}

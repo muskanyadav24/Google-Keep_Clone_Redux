@@ -1,0 +1,200 @@
+.create-note-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+  width: 100%;
+}
+
+.create-note-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: visible;
+}
+
+.create-note-container.expanded {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-color);
+}
+
+.note-title-section {
+  padding: 20px 24px 0;
+}
+
+.note-title-section input {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.note-content-section {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 24px;
+}
+
+.note-content-section textarea {
+  width: 100%;
+  font-size: 15px;
+  color: var(--text-primary);
+  resize: none;
+  overflow: hidden;
+  line-height: 1.6;
+}
+
+.compact-actions {
+  display: flex;
+  gap: 8px;
+  color: var(--text-secondary);
+  margin-left: 12px;
+}
+
+.expanded-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px 12px;
+  border-top: 1px solid transparent;
+}
+
+.left-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.left-actions .icon-button {
+  width: 36px;
+  height: 36px;
+  opacity: 0.8;
+  transition: all 0.2s;
+}
+
+.left-actions .icon-button:hover {
+  opacity: 1;
+  background-color: var(--sidebar-hover-bg);
+  transform: scale(1.1);
+}
+
+.close-btn {
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  transition: all 0.2s;
+  background-color: transparent;
+}
+
+.close-btn:hover {
+  background-color: var(--sidebar-hover-bg);
+}
+
+.create-note-image-preview {
+  position: relative;
+  width: 100%;
+}
+
+.create-note-image-preview img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  color: white;
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.remove-image-btn:hover {
+  background-color: rgba(220, 38, 38, 0.8);
+  transform: scale(1.1);
+}
+
+.color-picker-trigger {
+  position: relative;
+}
+
+.create-note-container .color-picker-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--surface-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-wrap: wrap;
+  width: max-content;
+  max-width: 300px;
+  gap: 6px;
+  padding: 12px;
+  z-index: 1000;
+  margin-top: 12px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+.color-option {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.color-option:hover {
+  transform: scale(1.2);
+}
+
+.color-option.active {
+  border: 2px solid var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Contrast Handling for Background Colors */
+.create-note-container.has-background {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.create-note-container.has-background input,
+.create-note-container.has-background textarea {
+  color: #1a1c1e !important;
+}
+
+.create-note-container.has-background .icon-button,
+.create-note-container.has-background .close-btn {
+  color: #1a1c1e !important;
+  opacity: 0.7;
+}
+
+.create-note-container.has-background .icon-button:hover,
+.create-note-container.has-background .close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .create-note-wrapper {
+    padding: 16px 8px;
+  }
+}
