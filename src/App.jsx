@@ -86,6 +86,7 @@ function App() {
           isOpen={isSidebarOpen} 
           activeTab={activeTab} 
           setActiveTab={setActiveTab} 
+          onClose={() => setIsSidebarOpen(false)}
         />
         <main className={`app-content ${isSidebarOpen ? 'shifted' : 'compact'}`}>
           {activeTab === 'notes' && <CreateNote />}

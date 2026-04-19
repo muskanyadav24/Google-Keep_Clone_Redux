@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 24px;
+  padding: 8px 16px;
   height: 64px;
   background-color: var(--header-bg);
   backdrop-filter: blur(12px);
@@ -136,12 +136,42 @@
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  .header-center {
+    flex: 1;
+    margin: 0 12px;
+  }
+}
+
 @media (max-width: 768px) {
+  .header {
+    padding: 8px 12px;
+  }
+
   .header-center {
     display: none;
   }
-  
-  .action-icons .icon-button:not(:last-child) {
+
+  .logo-text {
     display: none;
+  }
+  
+  .action-icons .icon-button:not(:first-child) {
+    display: none;
+  }
+
+  .user-section {
+    margin-left: 4px;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-left {
+    gap: 4px;
+  }
+  
+  .logo-container {
+    padding: 0;
   }
 }

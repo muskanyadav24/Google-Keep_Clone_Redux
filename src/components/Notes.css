@@ -7,8 +7,8 @@
 
 .notes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
   align-items: start;
 }
 
@@ -236,8 +236,33 @@
   opacity: 1;
 }
 
+@media (max-width: 1024px) {
+  .notes-container {
+    padding: 0 16px 48px;
+  }
+  
+  .notes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .notes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .note-actions {
+    opacity: 1; /* Always visible on touch devices */
+  }
+}
+
 @media (max-width: 600px) {
   .notes-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .notes-container {
+    padding: 0 8px 48px;
   }
 }

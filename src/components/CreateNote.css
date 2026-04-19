@@ -193,8 +193,40 @@
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .create-note-container {
+    max-width: 100%;
+  }
+
+  .note-title-section {
+    padding: 16px 16px 0;
+  }
+
+  .note-content-section {
+    padding: 12px 16px;
+  }
+
+  .expanded-actions {
+    padding: 8px 8px 8px;
+  }
+}
+
 @media (max-width: 600px) {
   .create-note-wrapper {
-    padding: 16px 8px;
+    padding: 16px 0;
+  }
+  
+  .create-note-container {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .left-actions {
+    gap: 2px;
+  }
+
+  .close-btn {
+    padding: 8px 16px;
   }
 }
